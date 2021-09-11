@@ -1,0 +1,45 @@
+call plug#begin('~/.config/nvim/autoload/plugged')
+
+"themes
+Plug 'morhetz/gruvbox'
+Plug 'shinchu/lightline-gruvbox.vim'
+
+" typing
+Plug 'tpope/vim-surround'
+Plug 'cohama/lexima.vim' "autoclose {},''...etc
+
+" Tree
+Plug 'scrooloose/nerdtree'
+
+" IDE
+Plug 'editorconfig/editorconfig-vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'mhinz/vim-signify'
+Plug 'yggdroot/indentline'
+Plug 'tpope/vim-commentary'
+Plug 'maximbaz/lightline-ale'
+Plug 'itchyny/lightline.vim'
+Plug 'sheerun/vim-polyglot'
+
+" git
+Plug 'tpope/vim-fugitive'
+Plug 'junegunn/gv.vim'
+Plug 'tpope/vim-rhubarb' "enable :GBrowse command
+
+
+if has('nvim')
+  Plug 'neovim/nvim-lspconfig'
+  Plug 'hrsh7th/nvim-compe'
+  Plug 'nvim-treesitter/nvim-treesitter',{'do':':TSUpdate'}
+  Plug 'nvim-lua/completion-nvim'
+  Plug 'nvim-lua/popup.nvim'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim'
+  Plug 'glepnir/lspsaga.nvim'
+  " Plug 'kyazdani42/nvim-web-devicons'
+  " Plug 'kabouzeid/nvim-lspinstall'
+  " Plug 'norcalli/nvim-colorizer.lua'
+
+endif
+
+call plug#end()
