@@ -3,6 +3,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 "themes
 Plug 'morhetz/gruvbox'
 Plug 'shinchu/lightline-gruvbox.vim'
+Plug 'mhartington/oceanic-next'
 
 " typing
 Plug 'tpope/vim-surround'
@@ -34,7 +35,8 @@ Plug 'arrufat/vala.vim'
 
 
 if has('nvim')
-  Plug 'neovim/nvim-lspconfig'
+  " Plug 'neovim/nvim-lspconfig'
+  " Plug 'kabouzeid/nvim-lspinstall'
   Plug 'glepnir/lspsaga.nvim'
   Plug 'hrsh7th/nvim-compe'
   Plug 'nvim-treesitter/nvim-treesitter',{'do':':TSUpdate'}
@@ -45,7 +47,7 @@ if has('nvim')
   " Plug 'kyazdani42/nvim-web-devicons'
   " Plug 'kabouzeid/nvim-lspinstall'
   " Plug 'norcalli/nvim-colorizer.lua'
-  " Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 endif
 
