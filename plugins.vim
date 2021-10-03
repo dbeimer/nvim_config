@@ -4,7 +4,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'shinchu/lightline-gruvbox.vim'
 Plug 'mhartington/oceanic-next'
-
+Plug 'ayu-theme/ayu-vim'
 " typing
 Plug 'tpope/vim-surround'
 Plug 'cohama/lexima.vim' "autoclose {},''...etc
@@ -21,6 +21,9 @@ Plug 'tpope/vim-commentary'
 Plug 'maximbaz/lightline-ale'
 Plug 'itchyny/lightline.vim'
 Plug 'sheerun/vim-polyglot'
+" Plug 'hrsh7th/vim-vsnip'
+" Plug 'hrsh7th/vim-vsnip-integ'
+Plug 'honza/vim-snippets'
 
 " git
 Plug 'tpope/vim-fugitive'

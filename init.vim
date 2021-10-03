@@ -47,25 +47,15 @@ set ignorecase
 set smartcase
 
 so ~/.config/nvim/plugins.vim
-so ~/.config/nvim/plugins-config/coc.vim
 
-" luafile ~/.config/nvim/lua/lsp/general.lua
-" luafile ~/.config/nvim/lua/plug-config/lspsaga-config.lua
 luafile ~/.config/nvim/lua/plug-config/telescope-config.lua
-" luafile ~/.config/nvim/lua/plug-config/compe-config.lua
 luafile ~/.config/nvim/lua/plug-config/treesitter-config.lua
 
-"languages
-" source ~/.config/nvim/lua/lsp/python-ls.lua
-" source ~/.config/nvim/lua/lsp/vala-ls.lua
-" source ~/.config/nvim/lua/lsp/vim-ls.lua
-" source ~/.config/nvim/lua/lsp/tsserver.lua
-" source ~/.config/nvim/lua/lsp/php.lua
-" source ~/.config/nvim/lua/lsp/html.lua
-" source ~/.config/nvim/lua/lsp/css.lua
-
-so ~/.config/nvim/plugin-config.vim
+so ~/.config/nvim/plugins-config/general.vim
+so ~/.config/nvim/plugins-config/lightline.vim
+so ~/.config/nvim/plugins-config/coc.vim
 so ~/.config/nvim/maps.vim
+so ~/.config/nvim/plugins-config/vim-snippets.vim
 
 
 let g:gruvbox_contrast_dark="hard"
@@ -73,8 +63,11 @@ let g:gruvbox_italic=1
 
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic = 1
-" colorscheme gruvbox
-colorscheme OceanicNext
+
+" let ayucolor="mirage"
+colorscheme gruvbox
+" colorscheme ayu
+" colorscheme OceanicNext
 
 if exists("&termguicolors") && exists("&winblend")
   syntax enable
@@ -93,4 +86,4 @@ augroup AutoSaveFolds
   autocmd BufWinEnter ?* silent! loadview 1
 augroup END
 
-au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
+au! BufWritePost $MYVIMRC source %      " auto Plug 'honza/vim-snippets'source when writing to init.vm alternatively you can run :source $MYVIMRC

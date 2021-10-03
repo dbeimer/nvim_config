@@ -1,10 +1,10 @@
 
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
 " unicode characters in the file autoload/float.vim
-set encoding=utf-8
+" set encoding=utf-8
 
 " TextEdit might fail if hidden is not set.
-set hidden
+" set hidden
 
 " Some servers have issues with backup files, see #649.
 set nobackup
@@ -164,3 +164,6 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+" xmap <leader>a  <Plug>(coc-codeaction-selected)
+" nmap <leader>a  <Plug>(coc-codeaction-selected)

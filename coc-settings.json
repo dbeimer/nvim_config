@@ -1,0 +1,12 @@
+{
+  "languageserver":{
+    "vala":{
+      "command": "vala-language-server",
+      "filetypes": ["vala"]
+    }
+  },
+  "coc.preferences.formatOnSaveFiletypes":[
+    "dart"
+  ],
+  "snippets.userSnippetsDirectory":"~/.config/nvim/snips"
+}
