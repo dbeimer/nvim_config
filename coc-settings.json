@@ -6,7 +6,9 @@
     }
   },
   "coc.preferences.formatOnSaveFiletypes":[
-    "dart"
+    "dart",
+    "javascript",
+    "vala"
   ],
   "snippets.userSnippetsDirectory":"~/.config/nvim/snips"
 }
