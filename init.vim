@@ -36,6 +36,7 @@ set timeoutlen=500                      " By default timeoutlen is 1000 ms
 set formatoptions-=cro                  " Stop newline continution of comments
 set clipboard=unnamedplus               " Copy paste between vim and everything else
 "set autochdir                           " Your working directory will always be the same as your working directory
+set scrolloff=10
 
 set numberwidth=1
 set showmatch
@@ -47,37 +48,29 @@ set ignorecase
 set smartcase
 
 so ~/.config/nvim/plugins.vim
-
 luafile ~/.config/nvim/lua/plug-config/telescope-config.lua
-luafile ~/.config/nvim/lua/plug-config/treesitter-config.lua
 
 so ~/.config/nvim/plugins-config/general.vim
 so ~/.config/nvim/plugins-config/lightline.vim
 so ~/.config/nvim/plugins-config/coc.vim
-so ~/.config/nvim/maps.vim
 so ~/.config/nvim/plugins-config/vim-snippets.vim
 
+so ~/.config/nvim/maps.vim
 
-let g:gruvbox_contrast_dark="hard"
-let g:gruvbox_italic=1
-
-let g:oceanic_next_terminal_bold = 1
-let g:oceanic_next_terminal_italic = 1
-
-" let ayucolor="mirage"
-colorscheme gruvbox
-" colorscheme ayu
-" colorscheme OceanicNext
+" let g:gruvbox_italic=1
+" let g:gruvbox_transparent_bg=1
 
 if exists("&termguicolors") && exists("&winblend")
   syntax enable
-  " set termguicolors
-  " set winblend=0
-  " set wildoptions=pum
-  " set pumblend=5
-  highlight Normal ctermbg=NONE
-endif
+  set termguicolors
+  set winblend=0
+  set wildoptions=pum
+  set pumblend=5
+  colorscheme gruvbox
+endi
 
+" #073642:#dc322f:#859900:#b58900:#268bd2:#ec0048:#2aa198:#94a3a5:#586e75:#cb4b16:#859900:#b58900:#268bd2:#d33682:#2aa198:#6c71c4
+" #073642:#cc241d:#98971a:#d79921:#458588:#ec0048:#689d6a:#a89984:#928374:#d65d0e:#98971a:#d79921:#458588:#d33682:#689d6a:#6c71c4
 
 "to save folding
 augroup AutoSaveFolds

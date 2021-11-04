@@ -5,6 +5,7 @@ Plug 'morhetz/gruvbox'
 Plug 'shinchu/lightline-gruvbox.vim'
 Plug 'mhartington/oceanic-next'
 Plug 'ayu-theme/ayu-vim'
+Plug 'overcache/NeoSolarized'
 " typing
 Plug 'tpope/vim-surround'
 Plug 'cohama/lexima.vim' "autoclose {},''...etc
@@ -15,7 +16,7 @@ Plug 'scrooloose/nerdtree'
 " IDE
 Plug 'editorconfig/editorconfig-vim'
 Plug 'easymotion/vim-easymotion'
-Plug 'mhinz/vim-signify'
+" Plug 'mhinz/vim-signify'
 Plug 'yggdroot/indentline'
 Plug 'tpope/vim-commentary'
 Plug 'maximbaz/lightline-ale'
@@ -31,10 +32,10 @@ Plug 'junegunn/gv.vim'
 Plug 'tpope/vim-rhubarb' "enable :GBrowse command
 
 " html
-Plug 'mattn/emmet-vim'
+" Plug 'mattn/emmet-vim'
 
 " vala
-Plug 'arrufat/vala.vim'
+" Plug 'arrufat/vala.vim'
 
 
 if has('nvim')
@@ -42,15 +43,15 @@ if has('nvim')
   " Plug 'kabouzeid/nvim-lspinstall'
   Plug 'glepnir/lspsaga.nvim'
   Plug 'hrsh7th/nvim-compe'
-  Plug 'nvim-treesitter/nvim-treesitter',{'do':':TSUpdate'}
+  " Plug 'nvim-treesitter/nvim-treesitter',{'do':':TSUpdate'}
   Plug 'nvim-lua/completion-nvim'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'nvim-lua/popup.nvim'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
   " Plug 'kyazdani42/nvim-web-devicons'
   " Plug 'kabouzeid/nvim-lspinstall'
   " Plug 'norcalli/nvim-colorizer.lua'
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 endif
 
