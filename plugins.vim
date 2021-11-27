@@ -6,6 +6,10 @@ Plug 'shinchu/lightline-gruvbox.vim'
 Plug 'mhartington/oceanic-next'
 Plug 'ayu-theme/ayu-vim'
 Plug 'overcache/NeoSolarized'
+Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
+Plug 'sainnhe/everforest'
+Plug 'sainnhe/gruvbox-material'
+
 " typing
 Plug 'tpope/vim-surround'
 Plug 'cohama/lexima.vim' "autoclose {},''...etc
@@ -25,6 +29,7 @@ Plug 'sheerun/vim-polyglot'
 " Plug 'hrsh7th/vim-vsnip'
 " Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'honza/vim-snippets'
+Plug 'aca/completion-tabnine', { 'do': './install.sh' }
 
 " git
 Plug 'tpope/vim-fugitive'
