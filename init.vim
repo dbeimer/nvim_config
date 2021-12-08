@@ -28,14 +28,14 @@ set number                              " Line numbers
 set cursorline                          " Enable highlighting of the current line
 set background=dark                     " tell vim what the background color looks like
 " set showtabline=2                       " Always show tabs
-" set noshowmode                          " We don't need to see things like -- INSERT -- anymore
+set noshowmode                          " We don't need to see things like -- INSERT -- anymore
 set nobackup                            " This is recommended by coc
 set nowritebackup                       " This is recommended by coc
 set updatetime=300                      " Faster completion
 set timeoutlen=500                      " By default timeoutlen is 1000 ms
 set formatoptions-=cro                  " Stop newline continution of comments
 set clipboard=unnamedplus               " Copy paste between vim and everything else
-set autochdir                           " Your working directory will always be the same as your working directory
+" set autochdir                           " Your working directory will always be the same as your working directory
 set scrolloff=10
 
 set numberwidth=1
@@ -76,19 +76,19 @@ if exists("&termguicolors") && exists("&winblend")
   " let g:nord_italic_comments = 1
   " let g:nord_italic = 1
 
-  let g:everforest_background = 'hard'
-  " let g:everforest_transparent_background = 1
-  let g:everforest_enable_italic = 1
-  colorscheme everforest
+  " let g:everforest_background = 'hard'
+  " " let g:everforest_transparent_background = 1
+  " let g:everforest_enable_italic = 1
+  " colorscheme everforest
   "
   " let g:gruvbox_material_background = 'hard'
   " let g:gruvbox_material_transparent_background = 1
   " let g:gruvbox_material_enable_italic = 1
   " colorscheme gruvbox-material
 
-  " let g:gruvbox_italic=1
-  " let g:gruvbox_transparent_bg=1
-  " colorscheme gruvbox
+  let g:gruvbox_italic=1
+  let g:gruvbox_transparent_bg=1
+  colorscheme gruvbox
 endi
 
 " #073642:#dc322f:#859900:#b58900:#268bd2:#ec0048:#2aa198:#94a3a5:#586e75:#cb4b16:#859900:#b58900:#268bd2:#d33682:#2aa198:#6c71c4
@@ -103,10 +103,12 @@ augroup END
 
 au! BufWritePost $MYVIMRC source %      " auto Plug 'honza/vim-snippets'source when writing to init.vm alternatively you can run :source $MYVIMRC
 
+let g:kite_supported_languages = ['python','javascript']
+
 " vimrc
 let g:completion_chain_complete_list = {
     \ 'default': [
-    \    {'complete_items': ['lsp', 'snippet', 'tabnine' ]},
+    \    {'complete_items': ['lsp', 'snippet', 'tabnine']},
     \    {'mode': '<c-p>'},
     \    {'mode': '<c-n>'}
     \]

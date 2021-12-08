@@ -29,7 +29,6 @@ Plug 'sheerun/vim-polyglot'
 " Plug 'hrsh7th/vim-vsnip'
 " Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'honza/vim-snippets'
-Plug 'aca/completion-tabnine', { 'do': './install.sh' }
 
 " git
 Plug 'tpope/vim-fugitive'
@@ -51,6 +50,9 @@ if has('nvim')
   " Plug 'nvim-treesitter/nvim-treesitter',{'do':':TSUpdate'}
   Plug 'nvim-lua/completion-nvim'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  "react plugins
+  Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' }
+
   Plug 'nvim-lua/popup.nvim'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'

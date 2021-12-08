@@ -23,4 +23,4 @@ let g:lightline = {
       \ }
       \}
 
-let g:lightline.colorscheme = 'everforest'
+let g:lightline.colorscheme = 'gruvbox'
