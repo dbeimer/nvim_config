@@ -15,7 +15,7 @@ let g:lightline = {
       \ },
       \ 'component_function': {
       \   'gitbranch': 'fugitive#head',
-      \   'kitestatus': 'kite#statusline'
+      \   'kitestatus': 'kite#status',
       \ },
       \ 'subseparator': {
       \   'left': '',

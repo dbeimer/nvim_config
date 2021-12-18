@@ -10,5 +10,8 @@
     "javascript",
     "vala"
   ],
-  "snippets.userSnippetsDirectory":"~/.config/nvim/snips"
+  "snippets.userSnippetsDirectory":"~/.config/nvim/snips",
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  }
 }
