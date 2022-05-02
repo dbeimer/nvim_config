@@ -37,7 +37,6 @@ set formatoptions-=cro                  " Stop newline continution of comments
 set clipboard=unnamedplus               " Copy paste between vim and everything else
 " set autochdir                           " Your working directory will always be the same as your working directory
 set scrolloff=10
-
 set numberwidth=1
 set showmatch
 " set foldmethod=syntax
@@ -47,6 +46,8 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
+set path=$PWD/**
+
 
 so ~/.config/nvim/plugins.vim
 luafile ~/.config/nvim/lua/plug-config/telescope-config.lua
@@ -80,15 +81,21 @@ if exists("&termguicolors") && exists("&winblend")
   " " let g:everforest_transparent_background = 1
   " let g:everforest_enable_italic = 1
   " colorscheme everforest
-  "
+  
   " let g:gruvbox_material_background = 'hard'
   " let g:gruvbox_material_transparent_background = 1
   " let g:gruvbox_material_enable_italic = 1
   " colorscheme gruvbox-material
 
   let g:gruvbox_italic=1
-  let g:gruvbox_transparent_bg=1
+  " let g:gruvbox_transparent_bg=1
   colorscheme gruvbox
+
+  " colorscheme catppuccin
+  autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE "transparent background
+  " let g:neosolarized_bold = 1
+  " let g:neosolarized_italic = 1
+  " colorscheme NeoSolarized
 endi
 
 " #073642:#dc322f:#859900:#b58900:#268bd2:#ec0048:#2aa198:#94a3a5:#586e75:#cb4b16:#859900:#b58900:#268bd2:#d33682:#2aa198:#6c71c4
@@ -103,13 +110,5 @@ augroup END
 
 au! BufWritePost $MYVIMRC source %      " auto Plug 'honza/vim-snippets'source when writing to init.vm alternatively you can run :source $MYVIMRC
 
-let g:kite_supported_languages = ['python','javascript']
-
-" vimrc
-let g:completion_chain_complete_list = {
-    \ 'default': [
-    \    {'complete_items': ['lsp', 'snippet', 'tabnine']},
-    \    {'mode': '<c-p>'},
-    \    {'mode': '<c-n>'}
-    \]
-\}
+" let &t_ZH="\e[3m"
+" let &t_ZR="\e[23m"

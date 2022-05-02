@@ -2,13 +2,15 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
 "themes
 Plug 'morhetz/gruvbox'
+" Plug 'rafamadriz/gruvbox'
 Plug 'shinchu/lightline-gruvbox.vim'
 Plug 'mhartington/oceanic-next'
 Plug 'ayu-theme/ayu-vim'
 Plug 'overcache/NeoSolarized'
 Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
 Plug 'sainnhe/everforest'
-Plug 'sainnhe/gruvbox-material'
+" Plug 'sainnhe/gruvbox-material'
+Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 
 " typing
 Plug 'tpope/vim-surround'

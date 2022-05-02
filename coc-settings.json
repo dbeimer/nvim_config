@@ -8,7 +8,9 @@
   "coc.preferences.formatOnSaveFiletypes":[
     "dart",
     "javascript",
-    "vala"
+    "vala",
+    "bash",
+    "sh"
   ],
   "snippets.userSnippetsDirectory":"~/.config/nvim/snips",
   "emmet.includeLanguages": {

@@ -11,15 +11,11 @@ vmap <leader>; :Commentary<CR>
 " plugs
 map <Leader>nt :NERDTreeToggle<CR>
 
-" split resize
-nnoremap <Leader>> 10<C-w>>
-nnoremap <Leader>< 10<C-w><
-
 " Moving text
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '<-2<CR>gv=gv
-nnoremap <Leader>j :m .+1<CR>==
-nnoremap <Leader>k :m .-2<CR>==
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
 
 " buffers
 map <Leader>ob :Buffers<cr>
