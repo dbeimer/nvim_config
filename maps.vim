@@ -17,9 +17,6 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 nnoremap <C-j> :m .+1<CR>==
 nnoremap <C-k> :m .-2<CR>==
 
-" buffers
-map <Leader>ob :Buffers<cr>
-
 " faster scrolling
 " nnoremap <C-j> 10<C-e>
 " nnoremap <C-k> 10<C-y>
@@ -44,8 +41,8 @@ inoremap kj <Esc>
 " Use alt + hjkl to resize windows
 nnoremap <M-j>    :resize -2<CR>
 nnoremap <M-k>    :resize +2<CR>
-nnoremap <M-h>    :vertical resize -2<CR>
-nnoremap <M-l>    :vertical resize +2<CR>
+nnoremap <C-h>    :vertical resize -2<CR>
+nnoremap <C-l>    :vertical resize +2<CR>
 "snippets
 " imap <expr> <C-j>   vsnip#available(1)  ? '<Plug>(vsnip-expand)'         : '<C-j>'
 " imap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'

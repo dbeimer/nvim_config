@@ -14,7 +14,7 @@ let g:lightline = {
       \   'inactive': 'inactive'
       \ },
       \ 'component_function': {
-      \   'gitbranch': 'fugitive#head',
+      \   'gitbranch': 'FugitiveHead',
       \   'kitestatus': 'kite#status',
       \ },
       \ 'subseparator': {
@@ -23,5 +23,6 @@ let g:lightline = {
       \ }
       \}
 
+" let g:lightline.colorscheme = 'solarized'
 let g:lightline.colorscheme = 'gruvbox'
 " let g:lightline.colorscheme = 'catppuccin'

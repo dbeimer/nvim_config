@@ -12,6 +12,7 @@
     "bash",
     "sh"
   ],
+  // "python.jediEnabled":false,
   "snippets.userSnippetsDirectory":"~/.config/nvim/snips",
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
