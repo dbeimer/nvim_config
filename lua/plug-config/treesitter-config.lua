@@ -1,5 +1,4 @@
-
-require'nvim-treesitter.configs'.setup {
+require 'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true,
     disable = {},
@@ -9,15 +8,15 @@ require'nvim-treesitter.configs'.setup {
     disable = {},
   },
   ensure_installed = {
-   "tsx",
-   -- "toml",
-   -- "fish",
-   -- "php",
+    "tsx",
+    -- "toml",
+    -- "fish",
+    -- "php",
     "json",
     "yaml",
-   -- "swift",
+    -- "swift",
     "html",
-   -- "scss", 
+    -- "scss",
     "javascript",
     "python",
     "bash"

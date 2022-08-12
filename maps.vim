@@ -38,6 +38,9 @@ vmap <Tab> >gv
 imap jk <Esc>
 imap kj <Esc>
 
+nmap <Leader>F :lua vim.lsp.buf.formatting_sync()<cr>
+vmap <Leader>F :lua vim.lsp.buf.formatting_sync()<cr>
+
 "telescope
 " nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
 " nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
