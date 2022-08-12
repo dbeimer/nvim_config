@@ -73,7 +73,8 @@ autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 100)
 "completion
 
 " if !exists('g:loaded_completion') | finish | endif
-set completeopt=menuone,noinsert,noselect
+" set completeopt=menuone,noinsert,noselect
+set completeopt=menu,menuone,noselect
 
 " Use <Tab> and <S-Tab> to navigate through popup menu
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"

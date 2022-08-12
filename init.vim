@@ -48,18 +48,12 @@ set smartcase
 
 so ~/.config/nvim/plugins.vim
 
+
+luafile ~/.config/nvim/lua/plug-config/manson.lua
 luafile ~/.config/nvim/lua/lsp/general.lua
 luafile ~/.config/nvim/lua/plug-config/lspsaga-config.lua
 luafile ~/.config/nvim/lua/plug-config/telescope-config.lua
-luafile ~/.config/nvim/lua/plug-config/compe-config.lua
-luafile ~/.config/nvim/lua/plug-config/treesitter-config.lua
-
-"languages
-source ~/.config/nvim/lua/lsp/python-ls.lua
-source ~/.config/nvim/lua/lsp/vala-ls.lua
-source ~/.config/nvim/lua/lsp/vim-ls.lua
-source ~/.config/nvim/lua/lsp/tsserver.lua
-source ~/.config/nvim/lua/lsp/php.lua
+luafile ~/.config/nvim/lua/plug-config/cmp-config.lua
 
 so ~/.config/nvim/plugin-config.vim
 so ~/.config/nvim/maps.vim
@@ -77,7 +71,6 @@ if exists("&termguicolors") && exists("&winblend")
   " set pumblend=5
   highlight Normal ctermbg=NONE
 endif
-
 
 "to save folding
 augroup AutoSaveFolds
