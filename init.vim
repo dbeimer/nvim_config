@@ -48,16 +48,15 @@ set smartcase
 
 so ~/.config/nvim/plugins.vim
 
-
 luafile ~/.config/nvim/lua/plug-config/manson.lua
 luafile ~/.config/nvim/lua/lsp/general.lua
 luafile ~/.config/nvim/lua/plug-config/lspsaga-config.lua
 luafile ~/.config/nvim/lua/plug-config/telescope-config.lua
 luafile ~/.config/nvim/lua/plug-config/cmp-config.lua
+luafile ~/.config/nvim/lua/plug-config/notify-config.lua
 
 so ~/.config/nvim/plugin-config.vim
 so ~/.config/nvim/maps.vim
-
 
 let g:gruvbox_contrast_dark="hard"
 let g:gruvbox_italic=1

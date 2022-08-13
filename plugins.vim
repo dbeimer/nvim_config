@@ -44,27 +44,23 @@ if has('nvim')
   Plug 'hrsh7th/cmp-cmdline'
   Plug 'hrsh7th/nvim-cmp'
 
-  " Plug 'honza/vim-snippets'
-  " Plug 'SirVer/ultisnips'
-  " Plug 'quangnguyen30192/cmp-nvim-ultisnips'
-  " Plug 'rafamadriz/friendly-snippets'
   Plug 'hrsh7th/cmp-vsnip'
   Plug 'hrsh7th/vim-vsnip-integ'
   Plug 'hrsh7th/vim-vsnip'
   Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' }
 
   Plug 'glepnir/lspsaga.nvim'
-  " Plug 'hrsh7th/nvim-compe'
   " Plug 'nvim-treesitter/nvim-treesitter',
   Plug 'nvim-lua/completion-nvim'
   Plug 'nvim-lua/popup.nvim'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
   " Plug 'kyazdani42/nvim-web-devicons'
-  " Plug 'kabouzeid/nvim-lspinstall'
   " Plug 'norcalli/nvim-colorizer.lua'
-  " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+  Plug 'rcarriga/nvim-notify'
+
+  Plug 'github/copilot.vim'
 endif
 
 call plug#end()
