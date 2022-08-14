@@ -1,3 +1,7 @@
+local lsp_config=require('lspconfig')
+local configs = require('lspconfig/configs')
+-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 local on_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
@@ -26,26 +30,43 @@ local lsp_flags = {
   -- This is the default in Nvim 0.7+
   debounce_text_changes = 150,
 }
-require('lspconfig')['pyright'].setup {
-  on_attach = on_attach,
-  flags = lsp_flags,
-}
-require('lspconfig')['tsserver'].setup {
-  on_attach = on_attach,
-  flags = lsp_flags,
-}
-
-require('lspconfig')['sumneko_lua'].setup {
+lsp_config.pyright.setup {
+  capabilities=capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }
 
-require('lspconfig')['jsonls'].setup {
+lsp_config.tsserver.setup {
+  capabilities=capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }
 
-require('lspconfig')['emmet_ls'].setup {
+lsp_config.sumneko_lua.setup {
+  capabilities=capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }
+
+lsp_config.jsonls.setup {
+  capabilities=capabilities,
+  on_attach = on_attach,
+  flags = lsp_flags,
+}
+
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+lsp_config['emmet_ls'].setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = { 'html','javascript', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less' },
+    init_options = {
+      html = {
+        options = {
+          -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+          ["bem.enabled"] = true,
+        },
+      },
+    }
+})
+

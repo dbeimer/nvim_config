@@ -6,7 +6,7 @@ set encoding=utf-8                      " The encoding displayed
 set pumheight=10                        " Makes popup menu smaller
 set fileencoding=utf-8                  " The encoding written to file
 set ruler              			            " Show the cursor position all the time
-set cmdheight=2                         " More space for displaying messages
+set cmdheight=1                         " More space for displaying messages
 set iskeyword+=-                      	" treat dash separated words as a word text object"
 set mouse=a                             " Enable your mouse
 set splitbelow                          " Horizontal splits will automatically be below
@@ -45,6 +45,12 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
+set completeopt=menu,menuone,noselect
+
+" don't give |ins-completion-menu| messages.
+" set shortmess+=c
+" set signcolumn=yes " always show signcolumns
+" set diffopt+=Vertical   " fugitive always vertical diffing
 
 so ~/.config/nvim/plugins.vim
 
@@ -64,7 +70,7 @@ colorscheme gruvbox
 
 if exists("&termguicolors") && exists("&winblend")
   syntax enable
-  " set termguicolors
+  set termguicolors
   " set winblend=0
   " set wildoptions=pum
   " set pumblend=5
@@ -79,3 +85,13 @@ augroup AutoSaveFolds
 augroup END
 
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
+
+autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 100)
+autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 100)
+autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 100)
+" autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
+
+" COPILOT CONFIG
+imap <silent><script><expr> <C-j> copilot#Accept("\<CR>")
+" imap <silent><script><expr> <C-l> copilot#Next()
+let g:copilot_no_tab_map=v:true
