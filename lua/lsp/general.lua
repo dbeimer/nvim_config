@@ -1,10 +1,26 @@
-local lsp_config=require('lspconfig')
+local lsp_config = require('lspconfig')
 local configs = require('lspconfig/configs')
--- local capabilities = vim.lsp.protocol.make_client_capabilities()
+
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 local on_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+  vim.api.nvim_create_autocmd("CursorHold", {
+    buffer = bufnr,
+    callback = function()
+      local opts = {
+        focusable = false,
+        close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+        -- border = 'double',
+        -- source = 'always',
+        -- prefix = ' ',
+        scope = 'cursor',
+        style = 'minimal',
+      }
+      vim.diagnostic.open_float(nil, opts)
+    end
+  })
 
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
@@ -31,25 +47,25 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 lsp_config.pyright.setup {
-  capabilities=capabilities,
+  capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }
 
 lsp_config.tsserver.setup {
-  capabilities=capabilities,
+  capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }
 
 lsp_config.sumneko_lua.setup {
-  capabilities=capabilities,
+  capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }
 
 lsp_config.jsonls.setup {
-  capabilities=capabilities,
+  capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }
@@ -57,16 +73,51 @@ lsp_config.jsonls.setup {
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 lsp_config['emmet_ls'].setup({
-    on_attach = on_attach,
-    capabilities = capabilities,
-    filetypes = { 'html','javascript', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less' },
-    init_options = {
-      html = {
-        options = {
-          -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
-          ["bem.enabled"] = true,
-        },
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { 'html','typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less' },
+  init_options = {
+    html = {
+      options = {
+        -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+        ["bem.enabled"] = true,
       },
-    }
+    },
+  }
 })
 
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
+
+function PrintDiagnostics(opts, bufnr, line_nr, client_id)
+  bufnr = bufnr or 0
+  line_nr = line_nr or (vim.api.nvim_win_get_cursor(0)[1] - 1)
+  opts = opts or { ['lnum'] = line_nr }
+
+  local line_diagnostics = vim.diagnostic.get(bufnr, opts)
+  if vim.tbl_isempty(line_diagnostics) then return end
+
+  local diagnostic_message = ""
+  for i, diagnostic in ipairs(line_diagnostics) do
+    diagnostic_message = diagnostic_message .. string.format("%d: %s", i, diagnostic.message or "")
+    print(diagnostic_message)
+    if i ~= #line_diagnostics then
+      diagnostic_message = diagnostic_message .. "\n"
+    end
+  end
+  -- vim.api.nvim_echo({ { diagnostic_message, "Normal" } }, false, {})
+ require('notify')(diagnostic_message,'error',{
+    timeout = 0,
+    title = 'Diagnostics',
+    icon = '',
+  })
+
+end
+
+vim.diagnostic.config({virtual_text = false}) -- disable virtual text
+-- vim.diagnostic.config({virtual_text = false,underline=false}) -- disable virtual text
+-- vim.cmd [[ autocmd! CursorHold,CursorHoldI * lua PrintDiagnostics() ]]
+-- vim.api.nvim_command("autocmd CursorHold,CursorHoldI * lua vim.lsp.diagnostic.open_float({border='rounded', focusable=false})")

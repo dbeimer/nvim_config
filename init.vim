@@ -49,7 +49,7 @@ set completeopt=menu,menuone,noselect
 
 " don't give |ins-completion-menu| messages.
 " set shortmess+=c
-" set signcolumn=yes " always show signcolumns
+set signcolumn=yes " always show signcolumns
 " set diffopt+=Vertical   " fugitive always vertical diffing
 
 so ~/.config/nvim/plugins.vim
@@ -60,13 +60,10 @@ luafile ~/.config/nvim/lua/plug-config/lspsaga-config.lua
 luafile ~/.config/nvim/lua/plug-config/telescope-config.lua
 luafile ~/.config/nvim/lua/plug-config/cmp-config.lua
 luafile ~/.config/nvim/lua/plug-config/notify-config.lua
+luafile ~/.config/nvim/maps.lua
+luafile ~/.config/nvim/lua/general.lua
+luafile ~/.config/nvim/lua/plug-config/lualine-config.lua
 
-so ~/.config/nvim/plugin-config.vim
-so ~/.config/nvim/maps.vim
-
-let g:gruvbox_contrast_dark="hard"
-let g:gruvbox_italic=1
-colorscheme gruvbox
 
 if exists("&termguicolors") && exists("&winblend")
   syntax enable

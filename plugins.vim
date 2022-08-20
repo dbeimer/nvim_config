@@ -14,23 +14,21 @@ Plug 'scrooloose/nerdtree'
 " IDE
 Plug 'editorconfig/editorconfig-vim'
 Plug 'easymotion/vim-easymotion'
-Plug 'mhinz/vim-signify'
-Plug 'yggdroot/indentline'
+" Plug 'mhinz/vim-signify'
+Plug 'yggdroot/indentline' "agrega la linea de identacion
 Plug 'tpope/vim-commentary'
-Plug 'maximbaz/lightline-ale'
-Plug 'itchyny/lightline.vim'
+" Plug 'maximbaz/lightline-ale'
+" Plug 'itchyny/lightline.vim'
 Plug 'sheerun/vim-polyglot'
+Plug 'nvim-lualine/lualine.nvim'
+" If you want to have icons in your statusline choose one of these
+Plug 'kyazdani42/nvim-web-devicons'
 
 " git
+Plug 'tanvirtin/vgit.nvim'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
 Plug 'tpope/vim-rhubarb' "enable :GBrowse command
-
-" html
-Plug 'mattn/emmet-vim'
-
-" vala
-Plug 'arrufat/vala.vim'
 
 
 if has('nvim')
@@ -51,9 +49,9 @@ if has('nvim')
 
   Plug 'glepnir/lspsaga.nvim'
   " Plug 'nvim-treesitter/nvim-treesitter',
-  Plug 'nvim-lua/completion-nvim'
   Plug 'nvim-lua/popup.nvim'
   Plug 'nvim-lua/plenary.nvim'
+  Plug 'folke/todo-comments.nvim'
   Plug 'nvim-telescope/telescope.nvim'
   " Plug 'kyazdani42/nvim-web-devicons'
   " Plug 'norcalli/nvim-colorizer.lua'
