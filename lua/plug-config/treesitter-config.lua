@@ -16,7 +16,8 @@ ts.setup {
     "typescript",
     "tsx",
     "gitignore",
-    "jsdoc"
+    "jsdoc",
+    "comment"
   },
   autotag = {
     enable = true,
