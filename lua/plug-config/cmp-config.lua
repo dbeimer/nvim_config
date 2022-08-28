@@ -35,11 +35,20 @@ local cmp_kinds = {
   Variable = " ",
 }
 
+local sources = {
+  buffer = "[Buffer]",
+  nvim_lsp = "[LSP]",
+  luasnip = "[LuaSnip]",
+  nvim_lua = "[Lua]",
+  latex_symbols = "[LaTeX]",
+}
+
 cmp.setup({
   view = { entries = { name = 'custom', selection_order = "near_cursor" } },
   formatting = {
     format = function(_, vim_item)
       vim_item.kind = (cmp_kinds[vim_item.kind] or '') .. vim_item.kind
+      vim_item.menu = sources[_.source.name] or _.source.name
       return vim_item
     end,
   },

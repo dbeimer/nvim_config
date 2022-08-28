@@ -6,8 +6,12 @@ vim.g.gruvbox_sign_column = 'bg0'
 vim.cmd("colorscheme gruvbox")
 vim.g.lightline = { colorscheme = "gruvbox" }
 
-require('vgit').setup()
 require('todo-comments').setup()
+require('gitsigns').setup({
+  signs = {
+    delete = { text = "✗" }
+  }
+})
 
 -- nerdTree
 vim.g.NERDTreeShowHidden = 1

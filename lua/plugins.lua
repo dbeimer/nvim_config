@@ -23,10 +23,13 @@ return require("packer").startup(function(use)
   use 'nvim-lualine/lualine.nvim'
   -- If you want to have icons in your statusline choose one of these
   use 'kyazdani42/nvim-web-devicons'
-  use 'github/copilot.vim'
+  -- use 'github/copilot.vim'
 
   -- git
-  use 'tanvirtin/vgit.nvim'
+  use {
+    'lewis6991/gitsigns.nvim',
+    tag = 'release' -- To use the latest release
+  }
   use 'tpope/vim-fugitive'
   use 'junegunn/gv.vim'
   use 'tpope/vim-rhubarb' --enable :GBrowse command
