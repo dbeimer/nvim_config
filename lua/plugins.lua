@@ -3,6 +3,7 @@ return require("packer").startup(function(use)
 
   -- themes
   use 'morhetz/gruvbox'
+  use 'arcticicestudio/nord-vim'
 
   -- typing
   use 'tpope/vim-surround'
@@ -21,6 +22,7 @@ return require("packer").startup(function(use)
   -- use 'itchyny/lightline.vim'
   use 'sheerun/vim-polyglot'
   use 'nvim-lualine/lualine.nvim'
+  -- use 'tjdevries/express_line.nvim'
   -- If you want to have icons in your statusline choose one of these
   use 'kyazdani42/nvim-web-devicons'
   -- use 'github/copilot.vim'

@@ -41,6 +41,7 @@ local sources = {
   luasnip = "[LuaSnip]",
   nvim_lua = "[Lua]",
   latex_symbols = "[LaTeX]",
+  cmdline = "[Cmd]",
 }
 
 cmp.setup({
