@@ -34,6 +34,7 @@ if vim.fn.exists("&termguicolors") and vim.fn.exists('&winblend') then
 end
 
 require('colorizer').setup()
+require('nvim-ts-autotag').setup()
 
 --format on save
 vim.api.nvim_create_autocmd('BufWritePre', {

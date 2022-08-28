@@ -52,12 +52,11 @@ return require("packer").startup(function(use)
 
     use 'glepnir/lspsaga.nvim'
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-    -- use 'nvim-treesitter/nvim-treesitter',
+    use 'windwp/nvim-ts-autotag'
     use 'nvim-lua/popup.nvim'
     use 'nvim-lua/plenary.nvim'
     use 'folke/todo-comments.nvim'
     use 'nvim-telescope/telescope.nvim'
-    -- use 'kyazdani42/nvim-web-devicons'
     use 'norcalli/nvim-colorizer.lua'
     use 'rcarriga/nvim-notify'
 
