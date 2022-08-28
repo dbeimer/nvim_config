@@ -53,3 +53,4 @@ vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 -- vim.o.shortmess+=c
 vim.o.signcolumn = "yes" -- always show signcolumns
 -- vim.o.diffopt+=Vertical   -- fugitive always vertical diffing
+-- vim.g.gruvbox_contrast_dark = "hard"

@@ -1,24 +1,24 @@
-require 'nvim-treesitter.configs'.setup {
+local status, ts = pcall(require, "nvim-treesitter.configs")
+if (not status) then return end
+
+ts.setup {
   highlight = {
     enable = true,
     disable = {},
   },
-  indent = {
-    enable = false,
-    disable = {},
-  },
   ensure_installed = {
-    "tsx",
-    -- "toml",
-    -- "fish",
-    -- "php",
     "json",
     "yaml",
-    -- "swift",
+    "css",
     "html",
-    -- "scss",
+    "lua",
     "javascript",
-    "python",
-    "bash"
+    "typescript",
+    "tsx",
+    "gitignore",
+    "jsdoc"
+  },
+  autotag = {
+    enable = true,
   },
 }

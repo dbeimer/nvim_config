@@ -1,11 +1,13 @@
--- vim.g.gruvbox_contrast_dark = "hard"
 vim.g.gruvbox_italic = 1
 vim.g.gruvbox_transparent_bg = 1
 vim.g.gruvbox_sign_column = 'bg0'
--- vim.g.gruvbox_improved_warnings=1
+
+vim.g.nord_italic_comments = true
 vim.cmd("colorscheme nord")
 
-require('todo-comments').setup()
+-- enable italic comments
+vim.highlight.create('Comment', { cterm = 'italic', gui = 'italic' }, false)
+
 require('gitsigns').setup({
   signs = {
     delete = { text = "✗" }
@@ -24,12 +26,14 @@ vim.g.NERDTreeMapOpenInTab = '\t'
 -- vim.g.indentLine_char = '.'
 if vim.fn.exists("&termguicolors") and vim.fn.exists('&winblend') then
   vim.opt.termguicolors = true
-  vim.opt.winblend = 0
-  vim.opt.wildoptions = 'pum'
-  vim.opt.pumblend = 5
-  vim.cmd('highlight Normal ctermbg=NONE')
+  -- vim.opt.winblend = 0
+  -- vim.opt.wildoptions = 'pum'
+  -- vim.opt.pumblend = 5
+  -- vim.cmd('highlight Normal ctermbg=NONE')
 
 end
+
+require('colorizer').setup()
 
 --format on save
 vim.api.nvim_create_autocmd('BufWritePre', {
@@ -57,16 +61,3 @@ vim.api.nvim_create_autocmd('BufWinEnter', {
   command = 'silent! loadview 1',
   group = autosaveFoldsId
 })
-
---copilot config
-vim.cmd('imap <silent><script><expr> <C-j> copilot#Accept("")')
--- imap <silent><script><expr> <C-l> copilot#Next()
-
---NOTE: este no funciona
--- vim.keymap.set('i', '<C-j>', vim.fn['copilot#Accept'](""), {
---   silent = true,
---   remap = true,
---   expr = true,
--- })
-
-vim.g.copilot_no_tab_map = true

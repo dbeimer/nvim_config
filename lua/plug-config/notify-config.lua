@@ -1,4 +1,10 @@
+require("notify").setup({
+  background_colour = '#000000'
+})
+
 vim.notify = require("notify")
+-- .setup({
+-- })
 -- Utility functions shared between progress reports for LSP and DAP
 
 local client_notifs = {}
@@ -80,7 +86,7 @@ vim.lsp.handlers["$/progress"] = function(_, result, ctx)
       icon = "",
       replace = notif_data.notification,
       -- timeout = 3000,
-      timeout=0
+      timeout = 0
     })
 
     notif_data.spinner = nil

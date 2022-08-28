@@ -18,9 +18,6 @@ return require("packer").startup(function(use)
   -- use 'mhinz/vim-signify'
   use 'yggdroot/indentline' --agrega la linea de identacion
   use 'tpope/vim-commentary'
-  -- use 'maximbaz/lightline-ale'
-  -- use 'itchyny/lightline.vim'
-  use 'sheerun/vim-polyglot'
   use 'nvim-lualine/lualine.nvim'
   -- use 'tjdevries/express_line.nvim'
   -- If you want to have icons in your statusline choose one of these
@@ -54,13 +51,14 @@ return require("packer").startup(function(use)
     use 'hrsh7th/vim-vsnip'
 
     use 'glepnir/lspsaga.nvim'
+    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     -- use 'nvim-treesitter/nvim-treesitter',
     use 'nvim-lua/popup.nvim'
     use 'nvim-lua/plenary.nvim'
     use 'folke/todo-comments.nvim'
     use 'nvim-telescope/telescope.nvim'
     -- use 'kyazdani42/nvim-web-devicons'
-    -- use 'norcalli/nvim-colorizer.lua'
+    use 'norcalli/nvim-colorizer.lua'
     use 'rcarriga/nvim-notify'
 
     -- vscode extensions
