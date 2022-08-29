@@ -10,31 +10,6 @@ local feedkey = function(key, mode)
   vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
 end
 
-
-local cmp_kinds = {
-  Class = " ",
-  Color = " ",
-  Constant = " ",
-  Constructor = " ",
-  Enum = "了 ",
-  EnumMember = " ",
-  Field = " ",
-  File = " ",
-  Folder = " ",
-  Function = " ",
-  Interface = "ﰮ ",
-  Keyword = " ",
-  Method = "ƒ ",
-  Module = " ",
-  Property = " ",
-  Snippet = "﬌ ",
-  Struct = " ",
-  Text = " ",
-  Unit = " ",
-  Value = " ",
-  Variable = " ",
-}
-
 local sources = {
   buffer = "[Buffer]",
   nvim_lsp = "[LSP]",
@@ -42,14 +17,25 @@ local sources = {
   nvim_lua = "[Lua]",
   latex_symbols = "[LaTeX]",
   cmdline = "[Cmd]",
+  cmp_tabnine = "[TN]"
 }
 
 cmp.setup({
   view = { entries = { name = 'custom', selection_order = "near_cursor" } },
   formatting = {
     format = function(_, vim_item)
-      vim_item.kind = (cmp_kinds[vim_item.kind] or '') .. vim_item.kind
-      vim_item.menu = sources[_.source.name] or _.source.name
+      local menu = sources[_.source.name] or _.source.name
+      local kind = lspkind.presets.default[vim_item.kind] .. ' ' .. vim_item.kind
+      if _.source.name == 'cmp_tabnine' then
+        kind = '⚡' .. vim_item.kind
+        if _.completion_item.data ~= nil and _.completion_item.data.detail ~= nil then
+          menu = menu .. ' ' .. _.completion_item.data.detail
+        end
+      end
+
+      vim_item.kind = kind
+      vim_item.menu = menu
+
       return vim_item
     end,
   },
@@ -89,7 +75,8 @@ cmp.setup({
   }),
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
-    { name = 'vsnip' }, -- For vsnip users.
+    { name = 'vsnip' },
+    { name = 'cmp_tabnine' }
   },
     { { name = 'buffer' }, },
     { { name = 'path' }, }
