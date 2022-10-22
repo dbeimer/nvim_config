@@ -26,7 +26,8 @@ local on_attach = function(client, bufnr)
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   local bufopts = { noremap = true, silent = true, buffer = bufnr }
   vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+  -- vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+  vim.keymap.set('n', 'gd', '<cmd>Telescope lsp_definitions<cr>', bufopts)
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
   vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
   vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
@@ -38,7 +39,8 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
   vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
   vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
-  vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+  -- vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+  vim.keymap.set('n', 'gr', '<cmd>Telescope lsp_references<cr>', bufopts)
   vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
 end
 
@@ -70,12 +72,24 @@ lsp_config.jsonls.setup {
   flags = lsp_flags,
 }
 
+lsp_config.astro.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  flags = lsp_flags,
+}
+
+lsp_config.tailwindcss.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  flags = lsp_flags,
+}
+
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 lsp_config['emmet_ls'].setup({
   on_attach = on_attach,
   capabilities = capabilities,
-  filetypes = { 'html','typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less' },
+  filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less' },
   init_options = {
     html = {
       options = {
@@ -109,7 +123,7 @@ function PrintDiagnostics(opts, bufnr, line_nr, client_id)
     end
   end
   -- vim.api.nvim_echo({ { diagnostic_message, "Normal" } }, false, {})
- require('notify')(diagnostic_message,'error',{
+  require('notify')(diagnostic_message, 'error', {
     timeout = 0,
     title = 'Diagnostics',
     icon = '',
@@ -117,7 +131,7 @@ function PrintDiagnostics(opts, bufnr, line_nr, client_id)
 
 end
 
-vim.diagnostic.config({virtual_text = false}) -- disable virtual text
+vim.diagnostic.config({ virtual_text = false }) -- disable virtual text
 -- vim.diagnostic.config({virtual_text = false,underline=false}) -- disable virtual text
 -- vim.cmd [[ autocmd! CursorHold,CursorHoldI * lua PrintDiagnostics() ]]
 -- vim.api.nvim_command("autocmd CursorHold,CursorHoldI * lua vim.lsp.diagnostic.open_float({border='rounded', focusable=false})")

@@ -4,6 +4,9 @@ return require("packer").startup(function(use)
   -- themes
   use 'morhetz/gruvbox'
   use 'arcticicestudio/nord-vim'
+  use 'projekt0n/github-nvim-theme'
+  use 'tjdevries/colorbuddy.vim'
+  use { 'Everblush/everblush.nvim', as = 'everblush' }
 
   -- typing
   use 'tpope/vim-surround'

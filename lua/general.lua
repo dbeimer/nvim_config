@@ -48,6 +48,7 @@ vim.o.incsearch = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
+vim.opt.foldmethod = 'manual'
 
 -- don't give |ins-completion-menu| messages.
 -- vim.o.shortmess+=c

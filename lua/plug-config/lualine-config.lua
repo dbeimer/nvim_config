@@ -1,6 +1,7 @@
 -- Config
 local config = {
   options = {
+    theme = 'nord',
     component_separators = '',
     section_separators = { left = '', right = '' },
   },
@@ -52,7 +53,15 @@ local config = {
     lualine_b = {},
     lualine_y = {},
     lualine_z = {},
-    lualine_c = {},
+    lualine_c = {
+      {
+        'filetype',
+        colored = false,
+        icon_only = true,
+        padding = { left = 2 }
+      },
+      { "filename", path = 1 }
+    },
     lualine_x = {},
   },
 }
