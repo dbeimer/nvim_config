@@ -131,7 +131,7 @@ function PrintDiagnostics(opts, bufnr, line_nr, client_id)
 
 end
 
-vim.diagnostic.config({ virtual_text = false }) -- disable virtual text
+-- vim.diagnostic.config({ virtual_text = false }) -- disable virtual text
 -- vim.diagnostic.config({virtual_text = false,underline=false}) -- disable virtual text
 -- vim.cmd [[ autocmd! CursorHold,CursorHoldI * lua PrintDiagnostics() ]]
 -- vim.api.nvim_command("autocmd CursorHold,CursorHoldI * lua vim.lsp.diagnostic.open_float({border='rounded', focusable=false})")
