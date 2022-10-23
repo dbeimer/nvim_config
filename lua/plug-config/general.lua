@@ -3,8 +3,21 @@ vim.g.gruvbox_transparent_bg = 1
 vim.g.gruvbox_sign_column = 'bg0'
 
 vim.g.nord_italic_comments = true
--- vim.cmd('colorscheme everblush')
-require('nord-otro')
+-- vim.g.material_style = "darker"
+
+require('material').setup({
+	styles = {
+		comments = { italic = true }
+	},
+	disable = {
+		background = false
+	}
+
+})
+
+vim.cmd('colorscheme material')
+-- require('colorbuddy').colorscheme('gruvbuddy')
+-- require('nord-otro')
 
 require('gitsigns').setup({
 	signs = {

@@ -12,7 +12,7 @@
  require('plug-config.lualine-config')
  require('plug-config.treesitter-config')
 
- vim.api.nvim_create_autocmd({ 'BufRead', 'BufEnter' }, {
- 	pattern = '*.json',
- 	command = 'set conceallevel=0'
- })
+ -- vim.api.nvim_create_autocmd({ 'BufRead', 'BufEnter' }, {
+ -- 	pattern = '*.json',
+ -- 	command = 'set conceallevel=0'
+ -- })
